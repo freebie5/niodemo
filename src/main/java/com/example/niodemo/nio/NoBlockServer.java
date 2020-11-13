@@ -58,7 +58,8 @@ public class NoBlockServer {
                     ByteBuffer buffer = ByteBuffer.allocate(1024);
 
                     // 9.2得到文件通道，将客户端传递过来的图片写到本地项目下(写模式、没有则创建)
-                    FileChannel outChannel = FileChannel.open(Paths.get("2.png"), StandardOpenOption.WRITE, StandardOpenOption.CREATE);
+                    FileChannel outChannel = FileChannel.open(Paths.get("X:\\nio_oo.txt"),
+                            StandardOpenOption.WRITE, StandardOpenOption.CREATE);
 
                     while (client.read(buffer) > 0) {
                         // 在读之前都要切换成读模式

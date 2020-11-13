@@ -13,10 +13,12 @@ public class BlockClient {
     public static void main(String[] args) throws IOException {
 
         // 1. 获取通道
-        SocketChannel socketChannel = SocketChannel.open(new InetSocketAddress("127.0.0.1", 6666));
+        SocketChannel socketChannel = SocketChannel.open(
+                new InetSocketAddress("127.0.0.1", 6666));
 
         // 2. 发送一张图片给服务端吧
-        FileChannel fileChannel = FileChannel.open(Paths.get("X:\\nio.txt"), StandardOpenOption.READ);
+        FileChannel fileChannel = FileChannel.open(
+                Paths.get("X:\\nio.txt"), StandardOpenOption.READ);
 
         // 3.要使用NIO，有了Channel，就必然要有Buffer，Buffer是与数据打交道的呢
         ByteBuffer buffer = ByteBuffer.allocate(1024);

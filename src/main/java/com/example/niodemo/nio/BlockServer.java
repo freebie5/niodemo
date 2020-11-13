@@ -17,7 +17,8 @@ public class BlockServer {
         ServerSocketChannel server = ServerSocketChannel.open();
 
         // 2.得到文件通道，将客户端传递过来的图片写到本地项目下(写模式、没有则创建)
-        FileChannel outChannel = FileChannel.open(Paths.get("2.png"), StandardOpenOption.WRITE, StandardOpenOption.CREATE);
+        FileChannel outChannel = FileChannel.open(
+                Paths.get("nio_ii.txt"), StandardOpenOption.WRITE, StandardOpenOption.CREATE);
 
         // 3. 绑定链接
         server.bind(new InetSocketAddress(6666));
